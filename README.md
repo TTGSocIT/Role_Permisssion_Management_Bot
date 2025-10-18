@@ -28,11 +28,9 @@ VERIFIED_ROLE_ID="your verified role id"
 ```
 The bot uses the IDs to give new users to the discord server the unverified role, and to detect when a user has then been verified. The name of the verified and unverified roles should be filled as well in `index.js` for the purpose of logging.
 
-To setup what permission roles are given for which ping roles, a new object needs to be added to the "rolePairs" list in config.json. The object should have ave "pingRole" and a "ChannelRole" key. The values of both key should be another object which has the "name" and "id" key which are strings to the role name and id (on discord) respectively.
-
 **3. Configure Role Pairs**
 
-The bot assigns channel roles basead on pings roles. To configure this, edit the `config.json` to follow this structure.
+The bot assigns channel roles based on pings roles. To configure this, edit the `config.json` to follow this structure.
 ```json
 {
   "rolePairs": [
