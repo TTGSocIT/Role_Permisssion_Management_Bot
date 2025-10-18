@@ -37,7 +37,7 @@ Next, set up this bot on your Discord server:
 1. Under **Installation → Install Link**, choose **Discord Provided Link**.
 2. Copy the link and open it in a browser.
 3. Select the server and authorize the bot with **Manage Roles** permission.
-4. On the server, under **Roles**, a new role with the same name as your bot will appear. Move this role **above all roles** the bot will assign later.
+4. On the server, under **Roles**, a new role with the same name as your bot will appear. Move this role above all roles the bot will assign later.
 
 > ⚠️ **Note:** The bot must have **Manage Roles** permission and its role must be above all roles it will assign.
 
@@ -49,11 +49,11 @@ DISCORD_TOKEN="YOUR_BOT_TOKEN_HERE"
 UNVERIFIED_ROLE_ID="UNVERIFIED_ROLE_ID_HERE"
 VERIFIED_ROLE_ID="VERIFIED_ROLE_ID_HERE"
 ```
-The bot uses the IDs to assign the **Unverified role** to new users, and to detect when a user has then been verified. Make sure the name of the **Verified** and **Unverified** role names are specified in the `index.js` file for the purpose of logging.
+The bot uses the IDs to assign the unverified role to new users, and to detect when a user has then been verified. Make sure the name of the verified and unverified role names are specified in the `index.js` file for the purpose of logging.
 
 ### 4. Role Pair Configuration
 
-The bot assigns channel roles based on **ping roles**. To configure this, edit the `config.json` file to follow this structure:
+The bot assigns channel roles based on ping roles. To configure this, edit the `config.json` file to follow this structure:
 ```json
 {
   "rolePairs": [
