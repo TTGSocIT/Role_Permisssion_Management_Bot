@@ -36,7 +36,7 @@ The bot assigns channel roles based on pings roles. To configure this, edit the 
   "rolePairs": [
     {
       "pingRole": { "name": "ping role name here", "id": "ping role id here" },
-      "channelRole": { "name": "ping role name here", "id": "channel role id here" }
+      "channelRole": { "name": "channel role name here", "id": "channel role id here" }
     }
   ]
 }
