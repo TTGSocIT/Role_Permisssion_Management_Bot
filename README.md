@@ -26,7 +26,7 @@ npm ci
 
 First, create a bot with the correct permissions.
 
-1. Go to the **Discord Developer Portal** → click **New Application**.
+1. Go to the [**Discord Developer Portal**](https://discord.com/developers/applications) and click **New Application**.
 2. Under **Installation → Installation Contexts**, enable **Guild Install**.
 3. Under the new **Default Install Settings**, add **Bot** under **Scopes**.
 4. In the **Permissions** dropdown, enable **Manage Roles**.
