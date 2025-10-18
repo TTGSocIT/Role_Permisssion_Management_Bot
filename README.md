@@ -3,7 +3,18 @@
 A Discord bot that automatically assigns channel/permission roles to users after they have been verified. Note this bot does not handle verification itself; it only manages role assignment after they have been verified based on the ping roles the user has.
 
 # Setup
-**1. Environment Variable**
+**1. Installation**
+
+You will need to install Node.js v18 or higher installed: https://nodejs.org/. You will get npm package manager bundled with Node.js.
+
+You will also have to clone the repository to your working directory using `git clone https://github.com/TTGSocIT/Role_Permisssion_Management_Bot`.
+
+Then, install all the dependencies by running:
+```bash
+npm ci
+```
+
+**2. Environment Variable**
 
 Create an .env file which has the following environment variables: 
 ```env
@@ -15,7 +26,7 @@ The bot uses the IDs to give new users to the discord server the unverified role
 
 To setup what permission roles are given for which ping roles, a new object needs to be added to the "rolePairs" list in config.json. The object should have ave "pingRole" and a "ChannelRole" key. The values of both key should be another object which has the "name" and "id" key which are strings to the role name and id (on discord) respectively.
 
-**2. Configure Role Pairs**
+**3. Configure Role Pairs**
 
 The bot assigns channel roles basead on pings roles. To configure this, edit the `config.json` to follow this structure.
 ```json
@@ -31,7 +42,7 @@ The bot assigns channel roles basead on pings roles. To configure this, edit the
 
 The pingRole tells the bot the role to trigger the assignment. The channelRole is the corrosponding role the bot should give the user. To add more role pairs, add more objects to the rolePair array in the same format.
 
-**3. Running**
+**4. Running**
 
 To run, simply type:
 ```bash
