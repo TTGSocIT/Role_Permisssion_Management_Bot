@@ -1,0 +1,14 @@
+{
+    "rolePairs": [
+        {
+            "pingRole": {
+                "name": "Ping Peanuts",
+                "id": "1428934254821249105"
+            },
+            "channelRole": {
+                "name": "Peanut Gallery",
+                "id": "1113283083261722684"
+            }
+        }
+    ]
+}
