@@ -7,9 +7,13 @@ A Discord bot that automatically assigns channel/permission roles to users after
 
 You will need to install Node.js v18 or higher installed: https://nodejs.org/. You will get npm package manager bundled with Node.js.
 
-You will also have to clone the repository to your working directory using `git clone https://github.com/TTGSocIT/Role_Permisssion_Management_Bot`.
+You will also have to clone the repository to your working directory with any method you like, or by using the git command line command:
 
-Then, install all the dependencies by running:
+```bash
+git clone https://github.com/TTGSocIT/Role_Permisssion_Management_Bot.git
+```
+
+Then, while in the working directory of the cloned repository, install all the dependencies by running:
 ```bash
 npm ci
 ```
