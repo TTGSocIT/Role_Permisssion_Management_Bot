@@ -3,7 +3,7 @@ const token = process.env.DISCORD_TOKEN
 
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const { rolePairs } = require('./config.json');
+const { ErrorChannel, rolePairs } = require('./config.json');
 const unverifiedRole = {name: "unverified", id: process.env.UNVERIFIED_ROLE_ID}
 const verifiedRole = {name: "verified", id: process.env.VERIFIED_ROLE_ID}
 
@@ -23,8 +23,8 @@ client.on(Events.GuildMemberAdd, async (member) => {
     try {
         await member.roles.add(unverifiedRole.id);
         console.log(`A new user '${member.user.tag}' has been given the unverified role: '${unverifiedRole.name}'`);
-    } catch (e) {
-        console.error(`Error in giving role '${unverifiedRole.name}' to '${member.user.tag}'`, e);
+    } catch (err) {
+        outputError(`Error in giving role '${unverifiedRole.name}' to '${member.user.tag}'`, err);
     }
 })
 
@@ -43,12 +43,25 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
             try {
                 await newMember.roles.add(channelRole.id);
                 console.log(`'${newMember.user.tag}' with role '${pingRole.name}' been given the role: '${channelRole.name}'`);
-            } catch (e) {
-                console.error(`Error in giving role '${channelRole.name}' to '${member.user.tag}' with role '${pingRole.name}'`, e);
+            } catch (err) {
+                outputError(`Error in giving role '${channelRole.name}' to '${member.user.tag}' with role '${pingRole.name}'`, err);
             }
         }
     }
 });
+
+process.on('uncaughtException', (err, origin) => {
+    const msg = `An uncaught exception has occured!\nException origin: ${origin}`
+
+    outputError(msg, err);
+});
+
+function outputError(msg, err) {
+    console.log(msg, err);
+
+    const channel = client.channels.cache.get(ErrorChannel.id);
+    if (channel && client.isReady()) channel.send(`\`\`\`${msg}\n${err.stack}\`\`\``);
+}
 
 // Log in to Discord with token
 client.login(token);
