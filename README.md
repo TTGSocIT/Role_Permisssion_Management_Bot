@@ -43,7 +43,7 @@ Next, set up this bot on your Discord server:
 
 ### 3. Environment Variable
 
-Create an `.env` file with the following environment variables: 
+Create an `.env` file with the following environment variables:
 ```env
 DISCORD_TOKEN="YOUR_BOT_TOKEN_HERE"
 UNVERIFIED_ROLE_ID="UNVERIFIED_ROLE_ID_HERE"
@@ -69,7 +69,7 @@ The `pingRole` tells the bot which role to trigger the assignment. The `channelR
 
 <details>
 <summary> 💡 Example Role Pair Configuration </summary>
-  
+
 ```json
 {
   "rolePairs": [
