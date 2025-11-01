@@ -31,6 +31,7 @@ client.on(Events.GuildMemberAdd, async (member) => {
 // the verified role is not handled by this bot (done elsewhere)
 
 // When a member becomes verified, give them the corresponding channel roles for the ping roles
+// the oldMember is the state befroe the 'update' and newMember is after , where update is when an idividuals profile changes.
 client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
     // Check if the event is when the user gains the verify role
     if (oldMember.roles.cache.has(verifiedRole.id) || !newMember.roles.cache.has(verifiedRole.id)) return;
