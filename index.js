@@ -43,7 +43,7 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
                 await newMember.roles.add(channelRole.id);
                 console.log(`'${newMember.user.tag}' with role '${pingRole.name}' been given the role: '${channelRole.name}'`);
             } catch (e) {
-                console.error(`Error in giving role '${unverifiedRole.name}' to '${member.user.tag}' with role '${pingRole.name}'`, e);
+                console.error(`Error in giving role '${channelRole.name}' to '${member.user.tag}' with role '${pingRole.name}'`, e);
             }
         }
     }
