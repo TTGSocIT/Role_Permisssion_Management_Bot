@@ -1,4 +1,9 @@
 {
+    "ErrorChannel": {
+        "name": "",
+        "id": ""
+    },
+
     "rolePairs": [
         {
             "pingRole": {

@@ -3,7 +3,7 @@ const token = process.env.DISCORD_TOKEN
 
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const { rolePairs } = require('./config.json');
+const { ErrorChannel, rolePairs } = require('./config.json');
 const unverifiedRole = {name: "unverified", id: process.env.UNVERIFIED_ROLE_ID}
 const verifiedRole = {name: "verified", id: process.env.VERIFIED_ROLE_ID}
 
@@ -47,6 +47,15 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
             }
         }
     }
+});
+
+process.on('uncaughtException', (err, origin) => {
+    const msg = `Caught exception: ${err}\n` +
+                `Exception origin: ${origin}\n`
+
+    console.log(msg);
+    const channel = client.channels.cache.get(ErrorChannel.id);
+    if (channel) channel.send(msg);
 });
 
 // Log in to Discord with token
